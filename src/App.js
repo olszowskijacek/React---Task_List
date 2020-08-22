@@ -1,9 +1,10 @@
 import React from 'react';
+import Form from './Form/Form.js';
 
 const tasks = [
-  {id: 1, content: 'kupić cytryny', done: true},
-  {id: 2, content: 'kupić kostki lodu', done: false},
-  {id: 3, content: 'posprzątać mieszkanie', done: false},
+  { id: 1, content: 'kupić cytryny', done: true },
+  { id: 2, content: 'kupić kostki lodu', done: false },
+  { id: 3, content: 'posprzątać mieszkanie', done: false },
 ];
 
 const hideDoneTasks = false;
@@ -20,10 +21,7 @@ function App() {
           <h2 className='section__title'>Dodaj nowe zadanie</h2>
         </header>
         <div className='section__body'>
-          <form className='form'>
-            <input className='form__input' placeholder='co jest do zrobienia?' />
-            <button className='form__button'>Dodaj zadanie</button>
-          </form>
+          <Form />
         </div>
       </section>
       <section className='section'>
