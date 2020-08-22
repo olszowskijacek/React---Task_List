@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './Form/Form.js';
+import Tasks from './Tasks/Tasks.js'
 
 const tasks = [
   { id: 1, content: 'kupić cytryny', done: true },
@@ -30,7 +31,7 @@ function App() {
           <div className='buttons'></div>
         </header>
         <div className='section__body'>
-          <ul className='tasks'></ul>
+          <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks}/>
         </div>
       </section>
     </main>
