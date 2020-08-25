@@ -11,16 +11,19 @@
 }
 .form__button {
     flex-grow: 1;
+    margin: 0 10px;
     background-color: #9baa3a;
     border: none;
     transition: 0.3s;
 }
 .form__button:hover {
     background-color: #7c8c15;
+    
 }
 
 @media (max-width: 520px) {
     .form__button {
         width: 100%;
+        margin: 5px 0;
     }
 }
