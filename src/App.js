@@ -2,7 +2,8 @@ import React from 'react';
 import Form from './Form/Form.js';
 import Tasks from './Tasks/Tasks.js'
 import Buttons from './Buttons/Buttons.js'
-import Section from './Section/Section';
+import Section from './Section/Section.js';
+import Header from './Header/Header.js'
 
 const tasks = [
   { id: 1, content: 'kupić cytryny', done: true },
@@ -15,9 +16,7 @@ const hideDoneTasks = false;
 function App() {
   return (
     <main className='container'>
-      <header>
-        <h1>Lista zadań</h1>
-      </header>
+      <Header title='Lista zadań'/>
     <Section 
       title='Dodaj zadanie' 
       body={<Form />}
