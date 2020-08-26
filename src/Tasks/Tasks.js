@@ -5,7 +5,7 @@ const Tasks = ({tasks, hideDone}) => (
   <ul className='tasks'>
     {tasks.map(task => (
       <li 
-        className={`tasks__item ${task.done && hideDone} ? ' tasks__item--hidden'`} 
+        className={`tasks__item ${task.done && hideDone ? 'tasks__item--hidden' : ''}`} 
         key={task.id}
       >
         <button 
@@ -27,6 +27,5 @@ const Tasks = ({tasks, hideDone}) => (
     ))}
   </ul>
 );
-
 
 export default Tasks;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from './Form/Form.js';
 import Tasks from './Tasks/Tasks.js'
 import Buttons from './Buttons/Buttons.js'
@@ -12,21 +12,33 @@ const tasks = [
   { id: 3, content: 'posprzątać mieszkanie', done: false },
 ];
 
-const hideDone = false;
+
 
 function App() {
+  const [hideDone, setHideDone] = useState(false);
+
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  };
+
   return (
     <Container className='container'>
-      <Header title='Lista zadań'/>
-    <Section 
-      title='Dodaj zadanie' 
-      body={<Form />}
-    />
-    <Section 
-      title='Lista zadań'
-      body={<Tasks tasks={tasks} hideDone={hideDone}/>}
-      extraHeaderContent={<Buttons tasks={tasks} hideDone={hideDone}/>}
-    />
+      <Header title='Lista zadań' />
+      <Section
+        title='Dodaj zadanie'
+        body={<Form />}
+      />
+      <Section
+        title='Lista zadań'
+        body={<Tasks tasks={tasks} hideDone={hideDone} />}
+        extraHeaderContent={
+          <Buttons
+            tasks={tasks}
+            hideDone={hideDone}
+            toggleHideDone={toggleHideDone}
+          />
+        }
+      />
     </Container>
   );
 }
